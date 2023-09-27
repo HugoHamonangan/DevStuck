@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'Questrial';
+    src: url('../assets/fonts/Questrial-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'RammettoOne';
+    src: url('../assets/fonts/RammettoOne-Regular.ttf') format('truetype');
+}
+
+*{
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    font-family: 'Questrial', sans-serif;
+    scroll-behavior: smooth;
+    scroll-padding: 10rem;
+    overflow-x: hidden;
+}
+
+h1,h2,h3,h4,h5{
+    font-family: 'RammettoOne', sans-serif;
+}
+
+/* Hide the default arrow */
+details > summary {
+    list-style: none;
+}
+
+details > summary::-webkit-details-marker {  /* Hide the default arrow for Webkit browsers */
+    display: none;
+}
+
+details > summary::before {
+    content: '▶';  /* Default arrow */
+    display: inline-block;
+    margin-right: 10px;
+    transition: transform 0.3s ease-in-out; /* Animation */
+}
+details[open] > summary::before {
+    content: '▼'; /* Arrow when details is open */
+}
+
+
