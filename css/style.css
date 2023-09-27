@@ -584,6 +584,10 @@ video {
   position: relative;
 }
 
+.sticky {
+  position: sticky;
+}
+
 .bottom-\[2rem\] {
   bottom: 2rem;
 }
@@ -634,6 +638,22 @@ video {
 
 .bottom-3 {
   bottom: 0.75rem;
+}
+
+.top-16 {
+  top: 4rem;
+}
+
+.top-\[\] {
+  top: ;
+}
+
+.top-\[50\] {
+  top: 50;
+}
+
+.top-\[50rem\] {
+  top: 50rem;
 }
 
 .z-20 {
@@ -726,6 +746,11 @@ video {
 
 .h-auto {
   height: auto;
+}
+
+.h-fit {
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
 .w-\[15rem\] {
@@ -1014,6 +1039,36 @@ video {
 .px-3 {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
+}
+
+.py-\[\] {
+  padding-top: ;
+  padding-bottom: ;
+}
+
+.py-\[4rem\] {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.px-\[2\.rem\] {
+  padding-left: 2.rem;
+  padding-right: 2.rem;
+}
+
+.px-\[2\.7rem\] {
+  padding-left: 2.7rem;
+  padding-right: 2.7rem;
+}
+
+.px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .pt-\[10\.5rem\] {
@@ -1327,6 +1382,16 @@ details[open] > summary::before {
   .md\:px-\[13rem\] {
     padding-left: 13rem;
     padding-right: 13rem;
+  }
+
+  .md\:py-\[5\.5rem\] {
+    padding-top: 5.5rem;
+    padding-bottom: 5.5rem;
+  }
+
+  .md\:px-\[2\.7rem\] {
+    padding-left: 2.7rem;
+    padding-right: 2.7rem;
   }
 
   .md\:opacity-100 {

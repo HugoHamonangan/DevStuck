@@ -10,6 +10,7 @@
         content="DEVSTUCK: Transforming challenges into opportunities with next-generation tech solutions. Dive into a world where your tech aspirations come to life.">
     <meta name="robots" content="index, follow">
     <meta name="author" content="DevStuck">
+    <meta name="theme-color" content="#ffffff" >
     <link rel="icon" href="./assets/images/logo_DevStuck.svg">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./lib/font-awesome-4.7.0/css/font-awesome.min.css">
@@ -132,22 +133,22 @@
                     <div class="flex justify-center flex-col items-center gap-5" data-aos="fade-right"
                         data-aos-duration="1000" data-aos-once="true">
                         <img src="./assets/images/person.svg" alt="person" class="object-contain">
-                        <h3 class="">Kevin Tim</h3>
+                        <h3 class="text-center">Kevin Tim</h3>
                     </div>
                     <div class="flex justify-center flex-col items-center gap-5" data-aos="fade-right"
                         data-aos-duration="1000" data-aos-once="true">
                         <img src="./assets/images/person.svg" alt="person" class="object-contain">
-                        <h3 class="">Ari Kurniawan</h3>
+                        <h3 class="text-center">Ari Kurniawan</h3>
                     </div>
                     <div class="flex justify-center flex-col items-center gap-5" data-aos="fade-right"
                         data-aos-duration="1000" data-aos-once="true">
                         <img src="./assets/images/person.svg" alt="person" class="object-contain">
-                        <h3 class="">Yudha Batara</h3>
+                        <h3 class="text-center">Yudha Batara</h3>
                     </div>
                     <div class="flex justify-center flex-col items-center gap-5" data-aos="fade-right"
                         data-aos-duration="1000" data-aos-once="true">
                         <img src="./assets/images/person.svg" alt="person" class="object-contain">
-                        <h3 class="">Hugo Hamonangan</h3>
+                        <h3 class="text-center">Hugo Hamonangan</h3>
                     </div>
                 </div>
             </div>
@@ -157,39 +158,48 @@
                 <h1 class="text-[#EB4f4f] text-[2em]">Layanan Kami.</h1>
                 <h5 class="text-[.8em] text-[#30475E]">Apa yang dapat kami lakukan untuk Anda ?</h5>
             </div>
-            <div class="flex flex-col md:flex-row gap-[3rem]" data-aos="fade-up" data-aos-duration="1000"
+            <div class="flex flex-col md:flex-row gap-[3rem] h-auto" data-aos="fade-up" data-aos-duration="1000"
                 data-aos-once="true">
                 <div class="flex flex-col gap-5 md:w-[30%]">
-                    <button class="p-3 bg-[#30475E] text-white w-full hover:bg-[#152636]">Company Profile
-                        Website</button>
-                    <button class="p-3 bg-[#30475E] text-white w-full hover:bg-[#152636]">Aplikasi Berbasis
-                        Mobile</button>
-                    <button class="p-3 bg-[#30475E] text-white w-full hover:bg-[#152636]">Aplikasi Berbasis
-                        Website</button>
-                    <button class="p-3 bg-[#30475E] text-white w-full hover:bg-[#152636]">Aplikasi Berbasis
-                        Desktop</button>
-
-                    <button class="p-3 bg-[#30475E] text-white w-full hover:bg-[#152636]">Setup Server / Hosting /
-                        VPS</button>
-                    <button class="p-5 bg-[#30475E] text-white w-full hover:bg-[#152636]">UI Desgin</button>
-                    <button class="p-5 bg-[#30475E] text-white w-full hover:bg-[#152636]">Pebuatan Restful
-                        API</button>
-                    <button class="p-5 bg-[#30475E] text-white w-full hover:bg-[#152636]">Bot AUto Like & Comments
-                        Instagram</button>
+                    <a class="p-3 bg-[#30475E] text-white w-full hover:bg-[#152636]" onclick="companyProfileWebsite()"
+                        href="#layanan_wrapper">Company Profile
+                        Website</a>
+                    <a class="p-3 bg-[#30475E] text-white w-full hover:bg-[#152636]" onclick="aplikasiBerbasisMobile()"
+                        href="#layanan_wrapper">Aplikasi Berbasis
+                        Mobile</a>
+                    <a class="p-3 bg-[#30475E] text-white w-full hover:bg-[#152636]" onclick="aplikasiBerbasisWebsite()"
+                        href="#layanan_wrapper">Aplikasi Berbasis
+                        Website</a>
+                    <a class="p-3 bg-[#30475E] text-white w-full hover:bg-[#152636]" onclick="aplikasiBerbasisDesktop()"
+                        href="#layanan_wrapper">Aplikasi Berbasis
+                        Desktop</a>
+                    <a class="p-3 bg-[#30475E] text-white w-full hover:bg-[#152636]" onclick="setupServer()"
+                        href="#layanan_wrapper">Setup Server / Hosting /
+                        VPS</a>
+                    <a class="p-5 bg-[#30475E] text-white w-full hover:bg-[#152636]" onclick="UIDesign()"
+                        href="#layanan_wrapper">UI Desgin</a>
+                    <a class="p-5 bg-[#30475E] text-white w-full hover:bg-[#152636]" onclick="restfulAPI()"
+                        href="#layanan_wrapper">Pebuatan Restful
+                        API</a>
+                    <a class="p-5 bg-[#30475E] text-white w-full hover:bg-[#152636]" onclick="autoLike()"
+                        href="#layanan_wrapper">Bot Auto Like & Comments
+                        Instagram</a>
 
                     <a href="#" class="bg-[#eb4f4f] hover:bg-[#f02323] p-5 text-white text-center mt-[4rem]">Hubungi
                         Kami.</a>
                 </div>
-                <div class="bg-[#222831] p-5 px-[2rem] relative flex flex-col gap-[2rem] w-full" data-aos="fade-up"
-                    data-aos-duration="1000" data-aos-once="true">
+                <div class="bg-[#222831] py-8 px-8 md:py-[5.5rem] md:px-[2.7rem] h-fit relative flex flex-col gap-[2rem] w-full"
+                    data-aos="fade-up" data-aos-duration="1000" data-aos-once="true" id="layanan_wrapper">
                     <div class="absolute right-3 top-3">
                         <img src="./assets/images/decoration.svg" alt="flower">
                     </div>
                     <div class="flex flex-col sm:flex-row gap-[3rem] items-center">
-                        <img src="./assets/images/logo_layanan_company.svg" alt="logo_layanan_company">
-                        <h2 class="text-white text-[2em]">Company Profile Website</h2>
+                        <img src="./assets/images/logo_layanan_company.svg" alt="logo_layanan_company"
+                            id="layanan_image">
+                        <h2 class="text-white text-[2em]" id="layanan_title">Company Profile Website</h2>
                     </div>
-                    <p class="text-[#DDDDDD] leading-7">Sebelum memulai pembuatan company profile, tim DEVSTUCK akan
+                    <p class="text-[#DDDDDD] leading-7" id="layanan_content">Sebelum memulai pembuatan company profile,
+                        tim DEVSTUCK akan
                         mengadakan konsultasi mendalam dengan Anda untuk memahami identitas brand perusahaan. Berbekal
                         pemahaman tersebut, kami akan melakukan penelitian terhadap industri Anda, pesaing, dan target
                         audiens untuk memastikan company profile yang dihasilkan menonjol dan relevan. Dengan kombinasi
@@ -203,7 +213,9 @@
                         memastikan company profile Anda selalu relevan. Dengan pendekatan profesional dan berorientasi
                         kualitas, DEVSTUCK berkomitmen menjadi partner Anda dalam komunikasi perusahaan yang efektif.
                     </p>
+
                 </div>
+
             </div>
         </section>
         <section id="portfolio" class="pt-[10.5rem] flex flex-col container px-5 mx-auto">
@@ -321,12 +333,14 @@
         <section id="kontak"
             class="py-[5rem] mt-[5.5rem] flex flex-col items-center justify-center container md:px-[13rem] px-[2rem] mx-auto bg-[#222831] gap-[3rem]">
             <h1 class="text-[2.3em] text-white text-center">Tertarik Memesan Layanan Kami ?</h1>
-            <p class="text-[#DDDDDD] text-center">Apabila Anda tertarik dengan layanan kami, jangan ragu untuk menghubungi tim DEVSTUCK. Kami siap
+            <p class="text-[#DDDDDD] text-center">Apabila Anda tertarik dengan layanan kami, jangan ragu untuk
+                menghubungi tim DEVSTUCK. Kami siap
                 membantu, memberikan solusi terbaik, dan mewujudkan visi digital Anda. Kepuasan Anda adalah prioritas
                 utama kami. Mari kolaborasi!</p>
             <a href="#" class="py-3 px-5 text-white bg-[#EB4F4F] hover:bg-[#f02323]">Hubungi Kami.</a>
         </section>
-        <footer class="py-[5rem] mt-[5.5rem] flex flex-col md:flex-row gap-[3rem] items-start justify-center md:justify-around container mx-auto px-5">
+        <footer
+            class="py-[5rem] mt-[5.5rem] flex flex-col md:flex-row gap-[3rem] items-start justify-center md:justify-around container mx-auto px-5">
             <div class="flex flex-col gap-5">
                 <h3 class="text-[#eb4f4f] text-[2rem]">DevStuck.</h3>
                 <p>With DevStuck your problem will ve solved</p>
@@ -334,7 +348,7 @@
                     <i class="fa fa-instagram"></i>
                     <i class="fa fa-twitter"></i>
                     <i class="fa fa-youtube"></i>
-                </div>               
+                </div>
             </div>
             <div class="flex flex-col gap-4">
                 <h5>Link Penting</h5>
@@ -343,7 +357,7 @@
                     <li class="list-none my-2"><a href="#tentang">Layanan</a></li>
                     <li class="list-none my-2"><a href="#kontak">Kontak</a></li>
                 </ul>
-            </div>            
+            </div>
         </footer>
         <p class="text-center pb-5">
             © 2023 DevStuck, Inc. All Rights Reserved
