@@ -1,32 +1,14 @@
-const openBars = document.querySelector('#openTheBars'),
-    closeBars = document.querySelector('#closeTheBars'),
-    menu = document.querySelector('#menu'),
-    overlay = document.querySelector('#overlay'),
-    menu_items = document.querySelectorAll('#menu ul li a'),
+const menu_items = document.querySelectorAll('#menu ul li a'),
     header = document.querySelector('#header'),
     sections = document.querySelectorAll('section'),
     topBtn = document.querySelector('#top'),
     logo_DevStuck = document.querySelector('#logo_DevStuck');
-
-function toggleMenuVisibility() {
-    menu.classList.toggle('opacity-100');
-    menu.classList.toggle('visible');
-    menu.classList.toggle('opacity-0');
-    menu.classList.toggle('invisible');
-
-    overlay.classList.toggle('opacity-60');
-    overlay.classList.toggle('visible');
-    overlay.classList.toggle('opacity-0');
-    overlay.classList.toggle('invisible');
-}
 
 function toTop() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
 }
 
-openBars.addEventListener('click', toggleMenuVisibility);
-closeBars.addEventListener('click', toggleMenuVisibility);
 topBtn.addEventListener('click', toTop);
 
 window.addEventListener('scroll', function() {

@@ -10,17 +10,54 @@
         content="DEVSTUCK: Transforming challenges into opportunities with next-generation tech solutions. Dive into a world where your tech aspirations come to life.">
     <meta name="robots" content="index, follow">
     <meta name="author" content="DevStuck">
-    <meta name="theme-color" content="#ffffff" >
+    <meta name="theme-color" content="#ffffff">
     <link rel="icon" href="./assets/images/logo_DevStuck.svg">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./lib/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./lib/splide-4.1.3/dist/css/splide.min.css">
     <link rel="stylesheet" href="./lib/aos-master/dist/aos.css">
+    <script src="//unpkg.com/alpinejs" defer></script>
     <script src="./lib/aos-master/dist/aos.js"></script>
+    <style>
+        [x-cloak] {
+            display: none;
+        }
+
+        .custom-shadow {
+            box-shadow: #30475E 10px 10px;
+        }
+
+        .custom-shadow-hover {
+            box-shadow: #EB4F4F 10px 10px !important;
+        }
+    </style>
     <title>DEVSTUCK | Bridging Dreams with Technology</title>
 </head>
 
-<body>
+<body x-data="{bar: false, chat: false}">
+
+    <div x-cloak x-on:click="chat = false" x-bind:class="!chat ? 'invisible opacity-0':'visible opacity-100'"
+        class="w-full h-[100vh] bg-[#000000af] z-30 p-[2rem] fixed top-0 left-0 transition-[311ms]" id="overlay2">
+    </div>
+
+
+    <div x-cloak x-bind:class="!chat ? 'invisible opacity-0' : 'visible opacity 100'"
+        class="flex flex-col justify-center transition-all items-center gap-5 fixed bg-white z-40 p-5 left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[70%] h-[70vh]">
+
+        <div class="flex w-full justify-end p-5 relative -top-10">
+            <i x-on:click="chat = false"
+                class="fa fa-times text-[2rem] bg-slate-200 hover:bg-slate-400 cursor-pointer p-3"></i>
+        </div>
+        <a href="https://fastwork.id/user/devstuck" target="_blank"
+            class="p-5 border text-2xl font-bold max-w-xl w-full text-center hover:bg-[#EB4F4F] relative -top-10">Pesan Melalui
+            Fastwork</a>
+        <a href="https://wa.me/+6281278059192" target="_blank"
+            class="relative -top-10 p-5 border text-2xl font-bold max-w-xl w-full text-center hover:bg-[#00ac2b]">Pesan Melalui
+            Whatsapp</a>
+    </div>
+
+
+
     <div id="top" class="fixed cursor-pointer z-50 right-3 bottom-3 hidden text-xl bg-[#eb4f4f] p-2 px-3 text-white">
         <i class="fa fa-arrow-up"></i>
     </div>
@@ -30,46 +67,53 @@
                 <img id="logo_DevStuck" src="./assets/images/logo_DevStuck.svg" alt="logo_DevStuck"
                     class="transition-[311ms] w-[5rem] md:w-[6rem]" loading="lazy">
             </a>
-            <span class="md:hidden block mr-4">
+            <span x-on:click="bar = true" class="md:hidden block mr-4">
                 <i class="fa fa-bars scale-[1.7] hover:bg-[#f02323] cursor-pointer p-1 text-white bg-[#EB4F4F]"
                     id="openTheBars"></i>
             </span>
-            <div class="w-full h-[100vh] bg-[#000000af] md:hidden opacity-0 invisible p-[2rem] fixed top-0 left-0 transition-[311ms]"
+            <div x-cloak x-on:click="bar = false" x-bind:class="bar ? 'visible opacity-100':'invisible opacity-0'"
+                class="w-full h-[100vh] bg-[#000000af] md:hidden p-[2rem] fixed top-0 left-0 transition-[311ms]"
                 id="overlay">
             </div>
-            <nav class="flex transition-[511ms] opacity-0 invisible md:opacity-100 md:visible md:static md:h-fit md:w-fit md:bg-transparent md:block md:transform-none fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2  bg-white w-[90%] h-[90vh] flex-col justify-center gap-5 items-center"
+
+            <nav x-cloak x-bind:class="bar ? 'visible opacity-100':'invisible opacity-0'"
+                class="flex transition-[511ms] md:opacity-100 md:visible md:static md:h-fit md:w-fit md:bg-transparent md:block md:transform-none fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2  bg-white w-[90%] h-[90vh] flex-col justify-center gap-5 items-center"
                 id="menu" style="z-index: 6;">
                 <span class="md:hidden block bottom-[2rem] ml-auto relative right-10">
-                    <i class="fa fa-times scale-[1.5] hover:bg-[#f02323] cursor-pointer p-1 text-white bg-[#EB4F4F]"
+                    <i x-on:click="bar = false"
+                        class="fa fa-times scale-[1.5] hover:bg-[#f02323] cursor-pointer p-1 text-white bg-[#EB4F4F]"
                         id="closeTheBars"></i>
                 </span>
                 <ul class="flex md:flex-row md:gap-0 flex-col gap-[2rem] text-[#3C3C3C] justify-center items-center">
                     <li>
-                        <a href="#beranda" class="hover:text-[#EB4F4F] p-3">Beranda</a>
+                        <a x-on:click="bar = false" href="#beranda" class="hover:text-[#EB4F4F] p-3">Beranda</a>
                     </li>
                     <li>
-                        <a href="#tentang_kami" class="hover:text-[#EB4F4F] p-3">Tentang Kami</a>
+                        <a x-on:click="bar = false" href="#tentang_kami" class="hover:text-[#EB4F4F] p-3">Tentang
+                            Kami</a>
                     </li>
                     <li>
-                        <a href="#layanan" class="hover:text-[#EB4F4F] p-3">Layanan</a>
+                        <a x-on:click="bar = false" href="#layanan" class="hover:text-[#EB4F4F] p-3">Layanan</a>
                     </li>
                     <li>
-                        <a href="#portfolio" class="hover:text-[#EB4F4F] p-3">Portfolio</a>
+                        <a x-on:click="bar = false" href="#portfolio" class="hover:text-[#EB4F4F] p-3">Portfolio</a>
                     </li>
                     <li>
-                        <a href="#testimoni" class="hover:text-[#EB4F4F] p-3">Testimoni</a>
+                        <a x-on:click="bar = false" href="#testimoni" class="hover:text-[#EB4F4F] p-3">Testimoni</a>
                     </li>
                     <li>
-                        <a href="#frequently_asked_questions" class="hover:text-[#EB4F4F] p-3">FAQ</a>
+                        <a x-on:click="bar = false" href="#frequently_asked_questions"
+                            class="hover:text-[#EB4F4F] p-3">FAQ</a>
                     </li>
                     <li>
-                        <a href="#kontak" class="hover:text-[#EB4F4F] p-3">Kontak</a>
+                        <a x-on:click="bar = false" href="#kontak" class="hover:text-[#EB4F4F] p-3">Kontak</a>
                     </li>
                 </ul>
-                <a href="#" class="py-3 px-5 text-white bg-[#EB4F4F] hover:bg-[#f02323] block md:hidden">Get
-                    Started.</a>
+                <a href="#" x-on:click="chat = true"
+                    class="py-3 px-5 text-white bg-[#EB4F4F] hover:bg-[#f02323] block md:hidden" >Hubungi Kami.</a>
             </nav>
-            <a href="#" class="py-3 px-5 text-white bg-[#EB4F4F] hover:bg-[#f02323] hidden md:block">Get Started.</a>
+            <a href="#" x-on:click="chat = true"
+                class="py-3 px-5 text-white bg-[#EB4F4F] hover:bg-[#f02323] hidden md:block" >Hubungi Kami.</a>
         </div>
     </header>
     <main class="mt-[8rem] md:mt-[13rem]">
@@ -85,8 +129,8 @@
                 <p class="text-[#3c3c3c] leading-7">Kami adalah tim freelancer berpengalaman di berbagai bidang IT,
                     Memahami tantangan era digital saat ini, kami berkomitmen untuk membantu Anda mengatasi hambatan dan
                     meraih peluang dengan teknologi terkini.</p>
-                <a href="#" class="py-3 px-5 text-white bg-[#EB4F4F] hover:bg-[#f02323]">Get
-                    Started.</a>
+                <a href="#" x-on:click="chat = true"
+                    class="py-3 px-5 text-white bg-[#EB4F4F] hover:bg-[#f02323]" >Hubungi Kami.</a>
             </div>
             <img src="./assets/images/logo_banner.svg" alt="logo_banner" class="w-auto object-contain"
                 data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
@@ -158,65 +202,55 @@
                 <h1 class="text-[#EB4f4f] text-[2em]">Layanan Kami.</h1>
                 <h5 class="text-[.8em] text-[#30475E]">Apa yang dapat kami lakukan untuk Anda ?</h5>
             </div>
-            <div class="flex flex-col md:flex-row gap-[3rem] h-auto" data-aos="fade-up" data-aos-duration="1000"
-                data-aos-once="true">
-                <div class="flex flex-col gap-5 md:w-[30%]">
-                    <a class="p-3 bg-[#30475E] text-white w-full hover:bg-[#152636]" onclick="companyProfileWebsite()"
-                        href="#layanan_wrapper">Company Profile
-                        Website</a>
-                    <a class="p-3 bg-[#30475E] text-white w-full hover:bg-[#152636]" onclick="aplikasiBerbasisMobile()"
-                        href="#layanan_wrapper">Aplikasi Berbasis
-                        Mobile</a>
-                    <a class="p-3 bg-[#30475E] text-white w-full hover:bg-[#152636]" onclick="aplikasiBerbasisWebsite()"
-                        href="#layanan_wrapper">Aplikasi Berbasis
-                        Website</a>
-                    <a class="p-3 bg-[#30475E] text-white w-full hover:bg-[#152636]" onclick="aplikasiBerbasisDesktop()"
-                        href="#layanan_wrapper">Aplikasi Berbasis
-                        Desktop</a>
-                    <a class="p-3 bg-[#30475E] text-white w-full hover:bg-[#152636]" onclick="setupServer()"
-                        href="#layanan_wrapper">Setup Server / Hosting /
-                        VPS</a>
-                    <a class="p-5 bg-[#30475E] text-white w-full hover:bg-[#152636]" onclick="UIDesign()"
-                        href="#layanan_wrapper">UI Desgin</a>
-                    <a class="p-5 bg-[#30475E] text-white w-full hover:bg-[#152636]" onclick="restfulAPI()"
-                        href="#layanan_wrapper">Pebuatan Restful
-                        API</a>
-                    <a class="p-5 bg-[#30475E] text-white w-full hover:bg-[#152636]" onclick="autoLike()"
-                        href="#layanan_wrapper">Bot Auto Like & Comments
-                        Instagram</a>
 
-                    <a href="#" class="bg-[#eb4f4f] hover:bg-[#f02323] p-5 text-white text-center mt-[4rem]">Hubungi
-                        Kami.</a>
-                </div>
-                <div class="bg-[#222831] py-8 px-8 md:py-[5.5rem] md:px-[2.7rem] h-fit relative flex flex-col gap-[2rem] w-full"
-                    data-aos="fade-up" data-aos-duration="1000" data-aos-once="true" id="layanan_wrapper">
-                    <div class="absolute right-3 top-3">
-                        <img src="./assets/images/decoration.svg" alt="flower">
+            <div class="flex w-full justify-center flex-wrap gap-20" x-data='{
+                "services": [
+                    {
+                        "src": "./assets/images/logo_layanan_company.svg",
+                        "value": "Company Profile"
+                    },
+                    {
+                        "src": "./assets/images/logo_layanan_mobile.svg",
+                        "value": "Aplikasi Berbasis Mobile"
+                    },
+                    {
+                        "src": "./assets/images/logo_layanan_website.png",
+                        "value": "Aplikasi Berbasis Website"
+                    },
+                    {
+                        "src": "./assets/images/logo_layanan_desktop.svg",
+                        "value": "Aplikasi Berbasis Desktop"
+                    },
+                    {
+                        "src": "./assets/images/logo_layanan_server.svg",
+                        "value": "Setup Hosting / VPS"
+                    },
+                    {
+                        "src": "./assets/images/logo_layanan_UIDesign.svg",
+                        "value": "User Interface Design"
+                    },
+                    {
+                        "src": "./assets/images/logo_layanan_API.svg",
+                        "value": "Pembuatan Restful API"
+                    },
+                    {
+                        "src": "./assets/images/logo_layanan_like.svg",
+                        "value": "Bot Auto Like & Comments Instagram"
+                    },
+                ]
+            }'>
+
+
+                <template x-for="service in services" :key="service.value">
+                    <div
+                        class="flex flex-col items-center justify-around gap-5 p-5 w-[20rem] h-[23rem] border border-[#30475E] transition custom-shadow cursor-pointer">
+                        <img :src="service.src" :alt="service.value" class="w-[7rem] h-[7rem] object-cover mx-auto">
+                        <h2 class="font-bold text-[1.4em] text-center text-[#30475E]" x-text="service.value"></h2>
                     </div>
-                    <div class="flex flex-col sm:flex-row gap-[3rem] items-center">
-                        <img src="./assets/images/logo_layanan_company.svg" alt="logo_layanan_company"
-                            id="layanan_image">
-                        <h2 class="text-white text-[2em]" id="layanan_title">Company Profile Website</h2>
-                    </div>
-                    <p class="text-[#DDDDDD] leading-7" id="layanan_content">Sebelum memulai pembuatan company profile,
-                        tim DEVSTUCK akan
-                        mengadakan konsultasi mendalam dengan Anda untuk memahami identitas brand perusahaan. Berbekal
-                        pemahaman tersebut, kami akan melakukan penelitian terhadap industri Anda, pesaing, dan target
-                        audiens untuk memastikan company profile yang dihasilkan menonjol dan relevan. Dengan kombinasi
-                        desain visual menarik dan konten yang persuasif, kami berupaya menciptakan representasi
-                        perusahaan Anda yang autentik. Selain itu, bagi company profile digital, integrasi media seperti
-                        video dan infografik, serta optimasi untuk user experience, menjadi perhatian khusus kami.
-
-                        Setelah draft pertama selesai, Anda akan diajak untuk memberikan feedback, memastikan hasil
-                        akhir sesuai ekspektasi. Tim DEVSTUCK memahami pentingnya adaptabilitas dan kekinian dalam dunia
-                        digital, sehingga kami menyediakan dukungan pasca-produksi dan, jika diperlukan, pelatihan untuk
-                        memastikan company profile Anda selalu relevan. Dengan pendekatan profesional dan berorientasi
-                        kualitas, DEVSTUCK berkomitmen menjadi partner Anda dalam komunikasi perusahaan yang efektif.
-                    </p>
-
-                </div>
+                </template>
 
             </div>
+
         </section>
         <section id="portfolio" class="pt-[10.5rem] flex flex-col container px-5 mx-auto">
             <div class="text-center mb-[5rem]" data-aos="fade-down" data-aos-duration="1000" data-aos-once="true">
@@ -327,7 +361,42 @@
             <div class="flex gap-[3rem] flex-col md:flex-row">
                 <img src="./assets/images/logo_question.svg" alt="logo_question">
                 <div class="flex flex-col text-[#3c3c3c] gap-[2rem] max-w-[30rem] transition-[300ms] px-5"
-                    id="questions_wrapper"></div>
+                    id="questions_wrapper" x-data='{
+                        "faqs": [
+                            {
+                                "question": "Apa itu Devstuck?",
+                                "answer": "Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks, and seasonal special events."
+                            },
+                            {
+                                "question": "Layanan apa saja yang ditawarkan oleh DevStuck?",
+                                "answer": "Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks, and seasonal special events."
+                            },
+                            {
+                                "question": "Bagaimana proses kerja DevStuck dalam proyek?",
+                                "answer": "Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks, and seasonal special events."
+                            },
+                            {
+                                "question": "Bagaimana cara saya memulai proyek dengan DevStuck?",
+                                "answer": "Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks, and seasonal special events."
+                            },
+                            {
+                                "question": "Bagaimana cara saya membayar layanan DevStuck?",
+                                "answer": "Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks, and seasonal special events."
+                            },
+                            {
+                                "question": "Kenapa saya harus bergabung dengan DevStuck?",
+                                "answer": "Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks, and seasonal special events."
+                            }
+                        ]
+                    }'>
+
+                    <template x-for="(faq, index) in faqs" :key="index">
+                        <details style="cursor: pointer;">
+                            <summary x-text="faq.question"></summary>
+                            <p x-text="faq.answer"></p>
+                        </details>
+                    </template>
+                </div>
             </div>
         </section>
         <section id="kontak"
@@ -337,7 +406,8 @@
                 menghubungi tim DEVSTUCK. Kami siap
                 membantu, memberikan solusi terbaik, dan mewujudkan visi digital Anda. Kepuasan Anda adalah prioritas
                 utama kami. Mari kolaborasi!</p>
-            <a href="#" class="py-3 px-5 text-white bg-[#EB4F4F] hover:bg-[#f02323]">Hubungi Kami.</a>
+            <button x-on:click="chat = true" class="py-3 px-5 text-white bg-[#EB4F4F] hover:bg-[#f02323]" >Hubungi
+                Kami.</button>
         </section>
         <footer
             class="py-[5rem] mt-[5.5rem] flex flex-col md:flex-row gap-[3rem] items-start justify-center md:justify-around container mx-auto px-5">
@@ -365,7 +435,7 @@
     </main>
     <script src="./lib/splide-4.1.3/dist/js/splide.min.js"></script>
     <script src="./js/script.js"></script>
-    <script src="./js/datas.js"></script>
+
     <script>
         AOS.init();
     </script>
