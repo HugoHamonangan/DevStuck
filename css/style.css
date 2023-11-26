@@ -1528,6 +1528,11 @@ details[open] > summary::before {
     padding-right: 13rem;
   }
 
+  .md\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
   .md\:opacity-100 {
     opacity: 1;
   }
